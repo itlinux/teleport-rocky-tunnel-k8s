@@ -18,13 +18,6 @@ resource "random_string" "password" {
 resource "htpasswd_password" "hash" {
   password = random_string.password.result
 }
-
-resource "libvirt_network" "bridge" {
-  name   = var.bridge_name
-  mode   = "bridge"
-  bridge = "bond-br"
-  dhcp {
-    enabled = false
-  }
+provider "libvirt" {
+  uri = "qemu:///system"
 }
-

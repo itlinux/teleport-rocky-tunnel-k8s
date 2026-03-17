@@ -4,7 +4,7 @@ resource "null_resource" "teleport_token" {
   }
 
   provisioner "local-exec" {
-    command = "ssh root@${var.teleport_auth_host} 'tctl tokens add --type=node --ttl=2h --format=text' > /tmp/teleport_token.txt"
+    command = "ssh root@${var.teleport_auth_host} 'tctl tokens add --type=node,kube --ttl=2h --format=text' > /tmp/teleport_token.txt"
   }
 }
 

@@ -1,2 +1,5 @@
 terraform*
 *backup
+tel-rock.old
+.terraform/
+.terraform.lock.hcl
