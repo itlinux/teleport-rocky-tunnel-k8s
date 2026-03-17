@@ -78,7 +78,6 @@ variable "teleport_proxy" {
 
 variable "teleport_ca_pin" {
   description = "Teleport CA pin from tctl status"
-  default     = "REDACTED"
 }
 
 variable "teleport_version" {
